@@ -15,4 +15,6 @@ pnpm dev
 pnpm build
 ```
 
-생성된 `dist` 폴더를 GitHub Pages, Vercel, Netlify 등에 배포할 수 있습니다. GitHub 저장소 `mingyun372-cmyk/Haenim_resume`에 이 프로젝트 파일을 업로드해 연결하세요.
+`main` 브랜치에 변경사항을 올리면 GitHub Actions가 사이트를 빌드해 GitHub Pages로 자동 배포합니다.
+
+저장소의 **Settings → Pages → Build and deployment → Source**가 **GitHub Actions**로 설정되어 있어야 합니다.
