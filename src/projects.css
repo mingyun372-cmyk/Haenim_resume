@@ -1,0 +1,124 @@
+.projects-overview,
+.project-page {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.overview-index {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid #303431;
+}
+
+.overview-index a {
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  gap: 16px;
+  align-items: center;
+  min-height: 78px;
+  padding: 16px 20px;
+  border-right: 1px solid #303431;
+  border-bottom: 1px solid #303431;
+  color: #e8e7e3;
+  text-decoration: none;
+}
+
+.overview-index a:nth-child(even) {
+  border-right: 0;
+}
+
+.overview-index a:hover b {
+  color: #c9ff4b;
+}
+
+.overview-index span,
+.overview-index small,
+.project-page-number {
+  color: #777e78;
+  font-size: 12px;
+  letter-spacing: .12em;
+}
+
+.project-page {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr) 280px;
+  gap: 42px;
+  align-items: center;
+}
+
+.project-page h2 {
+  margin: 16px 0 24px;
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 1.08;
+  letter-spacing: -.055em;
+}
+
+.project-page-content > p {
+  max-width: 680px;
+  margin: 0;
+  color: #a7ada8;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.project-page-proof {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px 0 28px 28px;
+  border-left: 1px solid #3b403c;
+}
+
+.project-page-proof span {
+  color: #c9ff4b;
+  font-size: 10px;
+  letter-spacing: .15em;
+}
+
+.project-page-proof b {
+  line-height: 1.6;
+}
+
+@media (max-width: 800px) {
+  .projects-overview,
+  .project-page {
+    min-height: auto;
+  }
+
+  .overview-index {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-index a,
+  .overview-index a:nth-child(even) {
+    border-right: 0;
+  }
+
+  .project-page {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .project-page-proof {
+    padding: 22px 0 0;
+    border-top: 1px solid #3b403c;
+    border-left: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .overview-index a {
+    grid-template-columns: 34px 1fr;
+  }
+
+  .overview-index small {
+    grid-column: 2;
+  }
+
+  .project-page h2 {
+    font-size: 38px;
+  }
+}
+
