@@ -1,0 +1,37 @@
+.hero h1 {
+  max-width: 880px;
+  font-size: clamp(44px, 6.5vw, 84px);
+}
+
+.hero .intro {
+  max-width: 920px;
+}
+
+.hero-actions {
+  margin-bottom: 0;
+}
+
+.project-stats {
+  margin-bottom: 46px;
+}
+
+@media (max-width: 800px) {
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero .intro br {
+    display: none;
+  }
+
+  .project-stats {
+    margin-bottom: 34px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero h1 {
+    font-size: 38px;
+  }
+}
+
