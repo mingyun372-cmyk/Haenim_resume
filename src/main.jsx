@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ArrowUpRight, BookOpen, ChevronRight, ExternalLink, Mail, Menu, X } from 'lucide-react'
 import './styles.css'
+import './contact.css'
 
 const projects = [
   {year:'2020–2024', title:'마술양품점 · 프로젝트 B', company:'스마일게이트', genre:'SNG · 샌드박스', tags:['시나리오','퀘스트','파트 리드'], summary:'마술양품점 런칭 직전 합류 후 서브·호감도 스토리와 메인 챕터 6을 담당하고, 설정 파트장으로 서브 스토리 검수를 이끌었습니다. 이후 샌드박스 프로젝트의 목축·대장장이 직업 퀘스트를 제작했습니다.', proof:'메인 챕터 6 · NPC 호감도 · 직업 퀘스트'},
@@ -33,8 +34,9 @@ function App(){
   <section id="projects" className="section"><div className="section-head"><div><span className="kicker">SELECTED WORK</span><h2>대표 프로젝트</h2></div><p>역할, 산출물, 규모가 한눈에 보이도록 핵심 작업만 선별했습니다.</p></div><div className="filters">{filters.map(f=><button className={filter===f?'active':''} onClick={()=>setFilter(f)} key={f}>{f}</button>)}</div><div className="project-list">{visible.map((p,i)=><article className="project" key={p.title}><div className="project-index">0{i+1}</div><div className="project-main"><div className="meta"><span>{p.year}</span><span>{p.company}</span><span>{p.genre}</span></div><h3>{p.title}</h3><p>{p.summary}</p><div className="tags">{p.tags.map(t=><span key={t}>{t}</span>)}</div></div><div className="proof"><span>KEY OUTPUT</span><b>{p.proof}</b></div></article>)}</div></section>
   <section id="skills" className="section dark"><div className="section-head"><div><span className="kicker">CORE STRENGTHS</span><h2>글에서 구현까지</h2></div><p>완성된 문장뿐 아니라 팀이 실제로 사용할 수 있는 규격과 데이터까지 책임집니다.</p></div><div className="skill-grid">{skills.map((s,i)=><article key={s[0]}><span>0{i+1}</span><h3>{s[0]}</h3><p>{s[1]}</p></article>)}</div><blockquote><BookOpen/><p>“다채롭고 풍성한 내용을 깔끔하고 정확한 형태의 텍스트로 정돈합니다.”</p><span>— 작업 원칙</span></blockquote></section>
   <section id="career" className="section"><div className="section-head"><div><span className="kicker">EXPERIENCE</span><h2>경력 타임라인</h2></div><p>출판편집에서 시작해 라이브 MMORPG, 캐주얼 모바일, 액션 RPG, SNG까지 경험했습니다.</p></div><div className="timeline">{career.map(c=><div key={c[0]}><time>{c[0]}</time><h3>{c[1]}</h3><p>{c[2]}</p></div>)}</div><div className="note"><strong>기반 역량</strong><p>국어국문학 전공 · 출판편집 경력 · 전문 교정/교열 · 일본어 중급 · Unity 플레이 테스트/데이터 입력 경험</p></div></section>
-  <section id="contact" className="contact"><span className="kicker">CONTACT</span><h2>다음 세계를 함께<br/>만들 준비가 되어 있습니다.</h2><div className="contact-links"><a href="mailto:mingyun86@naver.com"><Mail/>mingyun86@naver.com<ArrowUpRight/></a><a href="https://blog.naver.com/spearsun" target="_blank" rel="noreferrer"><ExternalLink/>Naver Blog<ArrowUpRight/></a><a href="https://github.com/mingyun372-cmyk/Haenim_resume" target="_blank" rel="noreferrer"><ExternalLink/>GitHub Repository<ArrowUpRight/></a></div></section>
+  <section id="contact" className="contact"><span className="kicker">CONTACT</span><h2>어떤 환경에서든 그에 가장 잘 어울리는<br/>멋지고 흥미로운 세계를 함께 만들어 나가겠습니다.</h2><dl className="contact-info"><div><dt>이름</dt><dd>강해님</dd></div><div><dt>학력</dt><dd>단국대학교 국어국문학과 졸업</dd></div><div><dt>거주지</dt><dd>서울시 은평구</dd></div><div><dt>전화</dt><dd><a href="tel:01071849283">010-7184-9283</a></dd></div><div><dt>블로그</dt><dd><a href="https://blog.naver.com/spearsun" target="_blank" rel="noreferrer">blog.naver.com/spearsun</a></dd></div></dl><div className="contact-links"><a href="mailto:mingyun86@naver.com"><Mail/>mingyun86@naver.com<ArrowUpRight/></a><a href="https://github.com/mingyun372-cmyk/Haenim_resume" target="_blank" rel="noreferrer"><ExternalLink/>GitHub Repository<ArrowUpRight/></a></div></section>
   <footer><span>© 2024 Haenim Kang</span><span>Scenario · Quest · Concept</span></footer>
  </main>
 }
 createRoot(document.getElementById('root')).render(<App/>)
+
