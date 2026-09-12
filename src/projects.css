@@ -38,6 +38,12 @@
   color: #9bf0ff;
 }
 
+.overview-index b,
+.project-page h2,
+.project-page-content > p {
+  white-space: pre-line;
+}
+
 .overview-index span,
 .overview-index small,
 .project-page-number {
