@@ -31,10 +31,10 @@ const skills = [
 ]
 const career = [
   ['2020.11–2024.01','스마일게이트 엔터테인먼트','부책임 · 시나리오/퀘스트/콘셉트'],
-  ['2017.05–2020.02','슈퍼애시드','리드 시나리오 기획'],
+  ['2017.05–2020.02','슈퍼애시드','리드 시나리오 기획 · 시나리오 관련 작업 전반 총괄'],
   ['2014.10–2016.08','글리터','주임 · 시나리오/콘텐츠/시스템'],
   ['2013.02–2014.10','위메이드 엔터테인먼트','전임연구원 · 시나리오/콘셉트'],
-  ['2011.08–2012.09','라이브플렉스','시나리오/퀘스트 기획']
+  ['2011.08–2012.09','라이브플렉스','사원 · 시나리오/퀘스트 기획']
 ]
 
 function App(){
@@ -47,7 +47,7 @@ function App(){
   <section id="projects" className="section projects-overview"><div className="section-head"><div><span className="kicker">PROJECT OVERVIEW</span><h2>참여 프로젝트</h2></div><p>다양한 장르와 개발 단계에 걸쳐<br/>이야기의 기획부터 구현까지의 과정을 담당했습니다.</p></div><div className="stats project-stats"><div><b>10년 9개월</b><span>게임 기획 경력</span></div><div><b>15개</b><span>참여 프로젝트 개수</span></div><div><b>370,000자</b><span>단일 프로젝트 메인 퀘스트 텍스트 분량</span></div><div><b>파트 리드</b><span>설정·시나리오 검수 경험</span></div></div><div className="overview-index">{projects.map((p,i)=><a href={`#project-${i+1}`} key={p.title}><span>0{i+1}</span><b>{p.title}</b><small>{p.year}</small></a>)}</div></section>
   {projects.map((p,i)=><section id={`project-${i+1}`} className="section project-page" key={p.title}><div className="project-page-number">PROJECT 0{i+1}</div><div className="project-page-content"><div className="meta"><span>{p.year}</span><span>{p.company}</span><span>{p.genre}</span></div><h2>{p.title}</h2><p>{p.summary}</p><div className="tags">{p.tags.map(t=><span key={t}>{t}</span>)}</div></div><div className="project-page-proof"><span>KEY OUTPUT</span><b>{p.proof}</b></div><div className={`project-media${p.images?' has-images':''}`} aria-label={`${p.title} 관련 이미지 영역`}>{(p.images??[null,null]).map((image,index)=><div key={image?.src??index}>{image?<img src={image.src} alt={image.alt}/>:<span>IMAGE 0{index+1}</span>}</div>)}</div></section>)}
   <section id="skills" className="section dark"><div className="section-head"><div><span className="kicker">CORE STRENGTHS</span><h2>글에서 구현까지</h2></div><p>완성된 문장에 그치지 않고<br/>실제로 사용할 수 있는 규격과 데이터까지 책임집니다.</p></div><div className="skill-grid">{skills.map((s,i)=><article key={s[0]}><span>0{i+1}</span><h3>{s[0]}</h3><p>{s[1]}</p></article>)}</div><blockquote><BookOpen/><p>“다채롭고 풍성한 내용을 깔끔하고 정확한 형태의 텍스트로 정돈합니다.”</p><span>— 작업 원칙</span></blockquote></section>
-  <section id="contact" className="contact"><span className="kicker">CONTACT</span><h2>어떤 환경에서든 그에 가장 잘 어울리는<br/>멋지고 흥미로운 세계를 만들어 나가겠습니다.</h2><div className="contact-info"><dl className="contact-column"><div><dt>이름</dt><dd>강해님</dd></div><div><dt>거주지</dt><dd>서울시 은평구</dd></div><div><dt>전화</dt><dd><a href="tel:01071849283">010-7184-9283</a></dd></div></dl><dl className="contact-column"><div><dt>학력</dt><dd>단국대학교 국어국문학과 졸업</dd></div><div><dt>블로그</dt><dd><a href="https://blog.naver.com/spearsun" target="_blank" rel="noreferrer">blog.naver.com/spearsun</a></dd></div></dl></div><div className="contact-links"><a href="mailto:mingyun86@naver.com"><Mail/>mingyun86@naver.com<ArrowUpRight/></a><a href="https://github.com/mingyun372-cmyk/Haenim_resume" target="_blank" rel="noreferrer"><ExternalLink/>GitHub Repository<ArrowUpRight/></a></div></section>
+  <section id="contact" className="contact"><span className="kicker">CONTACT</span><h2>어떤 환경에서든 그에 가장 잘 어울리는<br/>멋지고 흥미로운 세계를 만들어 나가겠습니다.</h2><div className="contact-info"><dl className="contact-column"><div><dt>이름</dt><dd>강해님</dd></div><div><dt>거주지</dt><dd>서울시 은평구</dd></div><div><dt>연락처</dt><dd><a href="tel:01071849283">010-7184-9283</a></dd></div></dl><dl className="contact-column"><div className="education-row"><dt>학력</dt><dd className="education-entry">단국대학교 국어국문학과 졸업 <span>(2005.03–2010.02)</span></dd></div><div><dt>블로그</dt><dd><a href="https://blog.naver.com/spearsun" target="_blank" rel="noreferrer">blog.naver.com/spearsun</a></dd></div></dl></div><div className="contact-links"><a href="mailto:mingyun86@naver.com"><Mail/>mingyun86@naver.com<ArrowUpRight/></a><a href="https://github.com/mingyun372-cmyk/Haenim_resume" target="_blank" rel="noreferrer"><ExternalLink/>GitHub Repository<ArrowUpRight/></a></div></section>
   <footer><span>© 2011-2024 Haenim Kang</span><span>Scenario · Quest · Concept</span></footer>
  </main>
 }
