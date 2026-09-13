@@ -36,6 +36,18 @@
   color: #e8e7e3;
 }
 
+.education-entry {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.education-entry span {
+  font-size: 14px;
+  color: #aeb4af;
+}
+
 .contact-info a {
   color: inherit;
   text-decoration-color: #5c645e;
@@ -67,6 +79,19 @@
 
   .contact-info dd {
     font-size: 14px;
+  }
+
+  .contact-column .education-row {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .education-entry {
+    font-size: 13px;
+  }
+
+  .education-entry span {
+    font-size: 12px;
   }
 }
 
