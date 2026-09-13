@@ -7,13 +7,21 @@ import './home.css'
 import './projects.css'
 import magicShopTitle from './assets/projects/magic-shop/title.png'
 import magicShopScenes from './assets/projects/magic-shop/scenes.jpg'
+import magiaKeyArt from './assets/projects/magia/key-art.png'
+import magiaDialogue from './assets/projects/magia/dialogue.png'
+import unlightTrinity from './assets/projects/glitter/unlight-trinity.png'
+import romanticPrincess from './assets/projects/glitter/romantic-princess.jpg'
+import projectP from './assets/projects/wemade/project-p.png'
+import projectGb from './assets/projects/wemade/project-gb.png'
+import dragonaKeyArt from './assets/projects/dragona/key-art.png'
+import dragonaQuest from './assets/projects/dragona/quest.png'
 
 const projects = [
   {year:'2020–2024', title:'마술양품점·프로젝트 B', company:'스마일게이트', genre:'SNG · 샌드박스', tags:['시나리오','퀘스트','파트장'], summary:'마술양품점 런칭 직전 합류 후 메인 챕터 6 시나리오 전반과 서브·호감도 스토리를 제작했고, 설정 파트장으로서 전체적인 작업 방향 및 퀄리티 검수를 이끌었습니다.\n이후 샌드박스 장르인 프로젝트 B에 전환배치되어 목축·대장장이 직업 퀘스트를 제작했습니다.', proof:'챕터 6 메인 시나리오 · 기존 설정 보강 · 직업 퀘스트', images:[{src:magicShopTitle,alt:'마술양품점 타이틀 화면'},{src:magicShopScenes,alt:'마술양품점 캐릭터 대화 및 호감도 화면'}]},
-  {year:'2017–2020', title:'마기아: 카르마 사가', company:'슈퍼애시드', genre:'모바일 액션 RPG', tags:['세계관','메인 퀘스트','연출','파트 리드'], summary:'메인 시나리오 기획자로서 전체 세계관과 캐릭터별 배경을 포괄하는 모든 메인 퀘스트 작성을 전담했습니다.\n더불어 개발 초기부터 런칭까지 전체 기간 동안 콘셉트 설정과 퀘스트 데이터, 아웃게임·인게임 연출까지 시나리오 관련 기획 전반을 총괄했습니다.', proof:'메인 퀘스트 약 370,000자 · 5개 언어 서비스 · 메인 퀘스트 음성 더빙'},
-  {year:'2014–2016', title:'언라이트 트리니티 · 로맨틱 프린세스', company:'글리터', genre:'캐주얼 TCG · 여성향 연애 시뮬레이션', tags:['외주 디렉팅','콘텐츠','교정·교열'], summary:'언라이트 원작 IP 기반의 다양한 콘텐츠 기획과 검수에 폭넓게 참여했습니다.\n이후 여성향 연애 시뮬레이션 프로젝트를 리드하며 외부 작가 작업 관리와 시나리오 검수, 텍스트 교정·교열 및 더빙 대본 작성까지 다채로운 작업을 수행했습니다.', proof:'원작 IP 반영 콘텐츠 · 캐릭터 가이드 · 텍스트 교정 교열'},
-  {year:'2013–2014', title:'프로젝트 P/G/B', company:'위메이드', genre:'캐주얼 모바일', tags:['콘셉트','퀘스트','시스템'], summary:'팀 내에서 동시에 진행되었던 다수 캐주얼 모바일 프로젝트들의 세계관, 캐릭터, 배경, 퀘스트 설정을 전담했으며, 일부 시스템 기획에도 참여했습니다.', proof:'다장르 모바일 기획'},
-  {year:'2011–2012', title:'드라고나 온라인', company:'라이브플렉스', genre:'MMORPG', tags:['시나리오','퀘스트'], summary:'라이브 서비스에 참여하여 신규 지역 대규모 업데이트를 위한 메인 퀘스트 300여 개를 단독으로 제작하고 데이터 관리 업무를 담당했습니다.', proof:'50-59레벨 퀘스트 300여 개'}
+  {year:'2017–2020', title:'마기아: 카르마 사가', company:'슈퍼애시드', genre:'모바일 액션 RPG', tags:['세계관','메인 퀘스트','연출','파트 리드'], summary:'메인 시나리오 기획자로서 전체 세계관과 캐릭터별 배경을 포괄하는 모든 메인 퀘스트 작성을 전담했습니다.\n더불어 개발 초기부터 런칭까지 전체 기간 동안 콘셉트 설정과 퀘스트 데이터, 아웃게임·인게임 연출까지 시나리오 관련 기획 전반을 총괄했습니다.', proof:'메인 퀘스트 약 370,000자 · 5개 언어 서비스 · 메인 퀘스트 음성 더빙', images:[{src:magiaKeyArt,alt:'마기아 카르마 사가 캐릭터 키 아트'},{src:magiaDialogue,alt:'마기아 카르마 사가 대화 연출 화면'}]},
+  {year:'2014–2016', title:'언라이트 트리니티 · 로맨틱 프린세스', company:'글리터', genre:'캐주얼 TCG · 여성향 연애 시뮬레이션', tags:['외주 디렉팅','콘텐츠','교정·교열'], summary:'언라이트 원작 IP 기반의 다양한 콘텐츠 기획과 검수에 폭넓게 참여했습니다.\n이후 여성향 연애 시뮬레이션 프로젝트를 리드하며 외부 작가 작업 관리와 시나리오 검수, 텍스트 교정·교열 및 더빙 대본 작성까지 다채로운 작업을 수행했습니다.', proof:'원작 IP 반영 콘텐츠 · 캐릭터 가이드 · 텍스트 교정 교열', images:[{src:unlightTrinity,alt:'언라이트 트리니티 전투 및 월드 화면'},{src:romanticPrincess,alt:'로맨틱 프린세스 캐릭터 키 아트'}]},
+  {year:'2013–2014', title:'프로젝트 P/G/B', company:'위메이드', genre:'캐주얼 모바일', tags:['콘셉트','퀘스트','시스템'], summary:'팀 내에서 동시에 진행되었던 다수 캐주얼 모바일 프로젝트들의 세계관, 캐릭터, 배경, 퀘스트 설정을 전담했으며, 일부 시스템 기획에도 참여했습니다.', proof:'다장르 모바일 기획', images:[{src:projectP,alt:'프로젝트 P 강아지 육성 화면'},{src:projectGb,alt:'프로젝트 P/G/B 캐주얼 게임 화면'}]},
+  {year:'2011–2012', title:'드라고나 온라인', company:'라이브플렉스', genre:'MMORPG', tags:['시나리오','퀘스트'], summary:'라이브 서비스에 참여하여 신규 지역 대규모 업데이트를 위한 메인 퀘스트 300여 개를 단독으로 제작하고 데이터 관리 업무를 담당했습니다.', proof:'50-59레벨 퀘스트 300여 개', images:[{src:dragonaKeyArt,alt:'드라고나 온라인 캐릭터 키 아트'},{src:dragonaQuest,alt:'드라고나 온라인 퀘스트 대화 화면'}]}
 ]
 const skills = [
   ['Narrative Design','세계관과 캐릭터의 서사를 플레이 흐름에 맞춰 구조화합니다.'],
