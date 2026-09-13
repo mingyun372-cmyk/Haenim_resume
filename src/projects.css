@@ -73,7 +73,7 @@
 
 .project-page h2 {
   margin: 16px 0 24px;
-  font-size: clamp(42px, 6vw, 72px);
+  font-size: clamp(38px, 5.5vw, 64px);
   line-height: 1.08;
   letter-spacing: -.055em;
 }
@@ -182,7 +182,7 @@
   }
 
   .project-page h2 {
-    font-size: 38px;
+    font-size: 34px;
   }
 
   .project-media {
