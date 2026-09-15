@@ -140,6 +140,46 @@
   line-height: 1.6;
 }
 
+.project-page-proof.output-cards {
+  gap: 12px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.output-list {
+  display: grid;
+  gap: 7px;
+}
+
+.output-card {
+  padding: 9px 11px;
+  border: 1px solid #3b403c;
+  background: #1f2321;
+}
+
+.output-card strong {
+  display: block;
+  margin-bottom: 3px;
+  color: #8e9690;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: .08em;
+}
+
+.output-card p {
+  margin: 0;
+  color: #e8e7e3;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.output-card em {
+  color: #9bf0ff;
+  font-style: normal;
+}
+
 @media (max-width: 800px) {
   .projects-overview,
   .project-page {
@@ -169,6 +209,10 @@
     padding: 22px 0 0;
     border-top: 1px solid #3b403c;
     border-left: 0;
+  }
+
+  .output-card p {
+    white-space: normal;
   }
 }
 
