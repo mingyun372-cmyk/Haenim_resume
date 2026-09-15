@@ -78,12 +78,25 @@
   letter-spacing: -.055em;
 }
 
-.project-page-content > p {
+.project-description {
   max-width: 680px;
-  margin: 0;
+}
+
+.project-description p {
+  margin: 0 0 8px;
   color: #a7ada8;
-  font-size: 17px;
-  line-height: 1.85;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.project-description p:last-child {
+  margin-bottom: 0;
+}
+
+.project-description em {
+  color: #9bf0ff;
+  font-style: normal;
+  font-weight: 700;
 }
 
 .project-page-proof {
