@@ -15,7 +15,7 @@ import projectP from './assets/projects/wemade/project-p.png'
 import projectGb from './assets/projects/wemade/project-gb.png'
 import dragonaKeyArt from './assets/projects/dragona/key-art.png'
 import dragonaQuest from './assets/projects/dragona/quest.png'
-import narrativeTablet from './assets/hero/narrative-tablet.jpg'
+import narrativeTablet from './assets/hero/narrative-tablet.png'
 
 const projects = [
   {year:'2020–2024', title:'마술양품점·프로젝트 B', company:'스마일게이트', genre:'SNG · 샌드박스', tags:['시나리오','퀘스트','파트장'], summary:'마술양품점 런칭 직전 합류 후 메인 챕터 6 시나리오 전반과 서브·호감도 스토리를 제작했고, 설정 파트장으로서 전체적인 작업 방향 및 퀄리티 검수를 이끌었습니다.\n이후 샌드박스 장르인 프로젝트 B에 전환배치되어 목축·대장장이 직업 퀘스트를 제작했습니다.', outputs:[{label:'담당 시나리오',text:'메인 중 ',highlight:'1개 챕터 전담'},{label:'제작 퀘스트',text:'메인·서브 통합 ',highlight:'550개+'},{label:'리드 경험',text:'설정 파트장'},{label:'외주 관리',text:'전문 작가 1인 밀착 담당'}], images:[{src:magicShopTitle,alt:'마술양품점 타이틀 화면'},{src:magicShopScenes,alt:'마술양품점 캐릭터 대화 및 호감도 화면'}]},

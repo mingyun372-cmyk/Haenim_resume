@@ -43,10 +43,8 @@
 .hero-visual img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  -webkit-mask-image: radial-gradient(ellipse 73% 76% at 53% 52%, #000 48%, rgba(0,0,0,.96) 60%, rgba(0,0,0,.55) 76%, transparent 100%);
-  mask-image: radial-gradient(ellipse 73% 76% at 53% 52%, #000 48%, rgba(0,0,0,.96) 60%, rgba(0,0,0,.55) 76%, transparent 100%);
+  height: auto;
+  object-fit: contain;
 }
 
 .project-stats {
