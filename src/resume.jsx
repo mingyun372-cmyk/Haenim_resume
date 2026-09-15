@@ -1,7 +1,8 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import { ExternalLink, Mail, Phone } from 'lucide-react'
+import { Download, ExternalLink, Mail, Phone } from 'lucide-react'
 import './resume.css'
+import profilePhoto from './assets/profile/haenim-kang.png'
 
 const highlights = [
   ['10년 9개월', '게임 기획 경력'],
@@ -32,10 +33,10 @@ function Resume(){
  const base=import.meta.env.BASE_URL
  return <main className="resume-page">
   <nav className="resume-nav"><span>Hae-nim<span>.</span>Kang</span></nav>
-  <header className="resume-hero"><p className="resume-kicker">SENIOR GAME NARRATIVE DESIGNER</p><h1>강해님 <small>Hae-nim Kang</small></h1><p className="resume-role">시나리오 · 퀘스트 · 콘셉트 기획</p><p className="resume-summary">RPG부터 SNG와 샌드박스까지 다양한 장르에서 세계관과 캐릭터를 설계하고, 퀘스트를 실제 게임 데이터로 구현해 온 내러티브 기획자입니다.</p><div className="resume-contact"><a href="mailto:mingyun86@naver.com"><Mail/>mingyun86@naver.com</a><a href="tel:01071849283"><Phone/>010-7184-9283</a><a href="https://blog.naver.com/spearsun" target="_blank" rel="noreferrer"><ExternalLink/>Naver Blog</a><a href={base}><ExternalLink/>Portfolio</a><span>서울시 은평구</span></div></header>
+  <header className="resume-hero"><div className="resume-hero-grid"><div className="resume-hero-copy"><p className="resume-kicker">SENIOR GAME NARRATIVE DESIGNER</p><h1>강해님 <small>Hae-nim Kang</small></h1><p className="resume-role">시나리오 · 퀘스트 · 콘셉트 기획</p><p className="resume-summary">RPG부터 SNG와 샌드박스까지 다양한 장르에서 세계관과 캐릭터를 설계하고, 퀘스트를 실제 게임 데이터로 구현해 온 내러티브 기획자입니다.</p><div className="resume-contact"><a href="mailto:mingyun86@naver.com"><Mail/>mingyun86@naver.com</a><a href="tel:01071849283"><Phone/>010-7184-9283</a><a href="https://blog.naver.com/spearsun" target="_blank" rel="noreferrer"><ExternalLink/>Naver Blog</a><span>서울시 은평구</span></div></div><figure className="resume-photo"><img src={profilePhoto} alt="강해님 프로필 사진"/></figure></div><div className="resume-actions"><a href={base}>포트폴리오 보기 <ExternalLink/></a><a href={`${base}downloads/Hae-nim-Kang-Resume.pdf`} download>이력서 PDF로 다운로드 <Download/></a></div></header>
   <section className="resume-section"><h2>KEY HIGHLIGHTS</h2><div className="highlight-grid">{highlights.map(([value,label])=><article key={label}><strong>{value}</strong><p>{label}</p></article>)}</div></section>
   <section className="resume-section"><h2>CORE STRENGTHS</h2><div className="strength-list">{strengths.map(([name,detail])=><article key={name}><h3>{name}</h3><p>{detail}</p></article>)}</div></section>
-  <section className="resume-section"><h2>PROFESSIONAL EXPERIENCE</h2><div className="experience-list">{experience.map(item=><article key={item.period}><time>{item.period}</time><div><h3>{item.company}</h3><p className="experience-role">{item.role}</p><ul>{item.bullets.map(bullet=><li key={bullet}>{bullet}</li>)}</ul></div></article>)}</div></section>
+  <section className="resume-section"><h2>PROFESSIONAL EXPERIENCE</h2><div className="experience-list">{experience.map(item=><article key={item.period}><time>{item.period}</time><div><h3>{item.company}</h3><p className="experience-role">{item.role}</p><ul>{item.bullets.map(bullet=><li key={bullet}>{bullet}</li>)}</ul></div><div className="experience-image-slot" aria-label={`${item.company} 관련 이미지 영역`}><span>IMAGE</span></div></article>)}</div></section>
   <section className="resume-section resume-bottom"><div><h2>EDUCATION</h2><h3>단국대학교</h3><p>인문학부 국어국문학과 졸업 · 2005.03–2010.02</p></div><div><h2>ADDITIONAL EXPERIENCE</h2><ul><li>2008–2009 네이버 게임리뷰 부문 파워블로거</li><li>자작 판타지소설 집필 · 단행본 18–20권 분량</li><li>일본어판 SRPG 타이틀 2종 완전공략 작성</li></ul></div></section>
   <footer className="resume-footer"><span>© 2011-2024 Haenim Kang</span></footer>
  </main>
