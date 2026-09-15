@@ -120,14 +120,14 @@
 .project-media.has-images > div {
   overflow: hidden;
   border-style: solid;
-  background: #0c0e0d;
+  background: #1f2321;
 }
 
 .project-media img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: fill;
 }
 
 .project-page-proof span {
