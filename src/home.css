@@ -47,6 +47,17 @@
   object-fit: contain;
 }
 
+.profile-visual {
+  max-width: 340px;
+}
+
+.profile-visual img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  -webkit-mask-image: radial-gradient(ellipse 70% 82% at 50% 48%, #000 58%, rgba(0,0,0,.94) 69%, transparent 100%);
+  mask-image: radial-gradient(ellipse 70% 82% at 50% 48%, #000 58%, rgba(0,0,0,.94) 69%, transparent 100%);
+}
+
 .project-stats {
   grid-template-columns: repeat(4, 1fr);
   margin-bottom: 46px;
@@ -71,6 +82,11 @@
     width: 100%;
     max-width: 680px;
     justify-self: start;
+  }
+
+  .profile-visual {
+    max-width: 280px;
+    justify-self: center;
   }
 
   .project-stats {

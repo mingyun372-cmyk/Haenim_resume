@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ArrowUpRight, BookOpen, ChevronRight, ExternalLink, Mail, Menu, X } from 'lucide-react'
 import './styles.css'
@@ -15,7 +15,7 @@ import projectP from './assets/projects/wemade/project-p.png'
 import projectGb from './assets/projects/wemade/project-gb.png'
 import dragonaKeyArt from './assets/projects/dragona/key-art.png'
 import dragonaQuest from './assets/projects/dragona/quest.png'
-import narrativeTablet from './assets/hero/narrative-tablet.png'
+import heroProfile from './assets/hero/haenim-profile.jpg'
 
 const projects = [
   {year:'2020–2024', title:'마술양품점·프로젝트 B', company:'스마일게이트', genre:'SNG · 샌드박스', tags:['시나리오','퀘스트','파트장'], summary:'마술양품점 런칭 직전 합류 후 메인 챕터 6 시나리오 전반과 서브·호감도 스토리를 제작했고, 설정 파트장으로서 전체적인 작업 방향 및 퀄리티 검수를 이끌었습니다.\n이후 샌드박스 장르인 프로젝트 B에 전환배치되어 목축·대장장이 직업 퀘스트를 제작했습니다.', outputs:[{label:'담당 시나리오',text:'메인 중 ',highlight:'1개 챕터 전담'},{label:'제작 퀘스트',text:'메인·서브 통합 ',highlight:'550개+'},{label:'리드 경험',text:'설정 파트장'},{label:'외주 관리',text:'전문 작가 1인 밀착 담당'}], images:[{src:magicShopTitle,alt:'마술양품점 타이틀 화면'},{src:magicShopScenes,alt:'마술양품점 캐릭터 대화 및 호감도 화면'}]},
@@ -73,10 +73,33 @@ const career = [
 
 function App(){
  const [menu,setMenu]=useState(false);
+ const [activeSection,setActiveSection]=useState('top');
  const go=id=>{document.querySelector(id)?.scrollIntoView({behavior:'smooth'});setMenu(false)}
+ const quickLinks=[
+  {id:'top',label:'OVERVIEW'},
+  {id:'career',label:'EXPERIENCE'},
+  {id:'projects',label:'PROJECTS'},
+  {id:'project-1',label:'01 Magic Atelier · Project B',child:true},
+  {id:'project-2',label:'02 Magia: Charma Saga',child:true},
+  {id:'project-3',label:'03 Unlight Trinity · Romantic Princess',child:true},
+  {id:'project-4',label:'04 Project P/G/B',child:true},
+  {id:'project-5',label:'05 Dragona Online',child:true},
+  {id:'skills',label:'STRENGTHS'},
+  {id:'contact',label:'CONTACT'},
+ ]
+ useEffect(()=>{
+  const sections=quickLinks.map(({id})=>document.getElementById(id)).filter(Boolean)
+  const observer=new IntersectionObserver(entries=>{
+   const visible=entries.filter(entry=>entry.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0]
+   if(visible) setActiveSection(visible.target.id)
+  },{rootMargin:'-22% 0px -62% 0px',threshold:[0,.1,.3,.6]})
+  sections.forEach(section=>observer.observe(section))
+  return()=>observer.disconnect()
+ },[])
  return <main>
-  <header className="nav"><a className="brand" href="#top">Hae-nim<span>.</span>Kang</a><nav className={menu?'open':''}>{['career','projects','skills','contact'].map((id,i)=><button key={id} onClick={()=>go('#'+id)}>{['경력','참여 프로젝트','역량','연락'][i]}</button>)}</nav><button className="menu" aria-label="메뉴" onClick={()=>setMenu(!menu)}>{menu?<X/>:<Menu/>}</button></header>
-  <section id="top" className="hero"><div className="hero-copy"><div className="eyebrow"><span/> SENIOR GAME NARRATIVE DESIGNER</div><h1>이야기를 쓰고,<br/><em>플레이로 완성합니다.</em></h1><p className="lead">강해님 · 시나리오 / 퀘스트 / 콘셉트 기획</p><p className="intro">RPG부터 SNG까지 다양한 장르에 걸쳐 세계관과 캐릭터를 설계하고<br/>수백 개의 퀘스트를 실제 게임 데이터로 완성해 온 내러티브 주력 기획자입니다.<br/>2008-2009 네이버 게임 파워블로거 경력이 있으며<br/>현재는 각종 고전게임 플레이 실황을 스토리 중심으로 방송하고 있습니다.</p><div className="hero-actions"><button className="primary" onClick={()=>go('#projects')}>참여 프로젝트 보기 <ChevronRight/></button><a className="secondary" href={`${import.meta.env.BASE_URL}resume.html`}>이력서 보기 <ChevronRight/></a></div></div><figure className="hero-visual"><img src={narrativeTablet} alt="태블릿 위에서 디지털 문서를 작성하는 금빛 깃털 펜"/></figure></section>
+  <header className="nav"><a className="brand" href="#top">Hae-nim<span>.</span>Kang</a><nav className={menu?'open':''}>{['career','projects','skills','contact'].map((id,i)=><button key={id} onClick={()=>go('#'+id)}>{['경력','참여 프로젝트','역량','연락'][i]}</button>)}<a href={`${import.meta.env.BASE_URL}resume.html`}>이력서</a></nav><button className="menu" aria-label="메뉴" onClick={()=>setMenu(!menu)}>{menu?<X/>:<Menu/>}</button></header>
+  <aside className="quick-nav" aria-label="페이지 퀵링크"><span className="quick-nav-mark" aria-hidden="true">{'</>'}</span>{quickLinks.map(link=><button key={link.id} className={`${link.child?'child ':''}${activeSection===link.id?'active':''}`} onClick={()=>go('#'+link.id)}>{link.label}</button>)}</aside>
+  <section id="top" className="hero"><div className="hero-copy"><div className="eyebrow"><span/> SENIOR GAME NARRATIVE DESIGNER</div><h1>이야기를 쓰고,<br/><em>플레이로 완성합니다.</em></h1><p className="lead">강해님 · 시나리오 / 퀘스트 / 콘셉트 기획</p><p className="intro">RPG부터 SNG까지 다양한 장르에 걸쳐 세계관과 캐릭터를 설계하고<br/>수백 개의 퀘스트를 실제 게임 데이터로 완성해 온 내러티브 주력 기획자입니다.<br/>2008-2009 네이버 게임 파워블로거 경력이 있으며<br/>현재는 각종 고전게임 플레이 실황을 스토리 중심으로 방송하고 있습니다.</p><div className="hero-actions"><button className="primary" onClick={()=>go('#projects')}>참여 프로젝트 보기 <ChevronRight/></button><a className="secondary" href={`${import.meta.env.BASE_URL}resume.html`}>이력서 보기 <ChevronRight/></a></div></div><figure className="hero-visual profile-visual"><img src={heroProfile} alt="강해님 프로필 사진"/></figure></section>
   <section id="career" className="section"><div className="section-head"><div><span className="kicker">EXPERIENCE</span><h2>경력 타임라인</h2></div><p>종합출판사 편집자로부터 게임 기획자로 전직하여<br/>라이브 MMORPG, 캐주얼 모바일, 액션 RPG, SNG, 샌드박스를 아우르는 다양한 장르를 경험했습니다.</p></div><div className="timeline">{career.map(c=><div key={c[0]}><time>{c[0]}</time><h3>{c[1]}</h3><p>{c[2]}</p></div>)}</div><div className="note"><strong>기반 역량</strong><p>국어국문학 전공 · 출판편집 경력 · 전문 교정/교열 · 일본어 중급 · Unity 플레이 테스트/데이터 입력 경험</p></div></section>
   <section id="projects" className="section projects-overview"><div className="section-head"><div><span className="kicker">PROJECT OVERVIEW</span><h2>참여 프로젝트</h2></div><p>다양한 장르와 개발 단계에 걸쳐<br/>이야기의 기획부터 구현까지의 과정을 담당했습니다.</p></div><div className="stats project-stats"><div><b>10년 9개월</b><span>게임 기획 경력</span></div><div><b>15개</b><span>참여 프로젝트 개수</span></div><div><b>370,000자</b><span>단일 프로젝트 메인 퀘스트 텍스트 분량</span></div><div><b>파트 리드</b><span>설정·시나리오 검수 경험</span></div></div><div className="overview-index">{projects.map((p,i)=><a href={`#project-${i+1}`} key={p.title}><span>0{i+1}</span><b>{p.title}</b><small>{p.year}</small></a>)}</div></section>
   {projects.map((p,i)=><section id={`project-${i+1}`} className="section project-page" key={p.title}><div className="project-page-number">PROJECT 0{i+1}</div><div className="project-page-content"><div className="meta"><span>{p.year}</span><span>{p.company}</span><span>{p.genre}</span></div><h2>{p.title}</h2><div className="project-description">{(projectDescriptions[p.title]??[p.summary]).map((paragraph,index)=><p key={index}>{renderHighlightedText(paragraph)}</p>)}</div><div className="tags">{p.tags.map(t=><span key={t}>{t}</span>)}</div></div><div className={`project-page-proof${p.outputs?' output-cards':''}`}><span>KEY OUTPUT</span>{p.outputs?<div className="output-list">{p.outputs.map(output=><div className="output-card" key={output.label}><strong>{output.label}</strong><p>{output.text}{output.highlight&&<em>{output.highlight}</em>}{output.suffix}</p></div>)}</div>:<b>{p.proof}</b>}</div><div className={`project-media${p.images?' has-images':''}`} aria-label={`${p.title} 관련 이미지 영역`}>{(p.images??[null,null]).map((image,index)=><div key={image?.src??index}>{image?<img src={image.src} alt={image.alt}/>:<span>IMAGE 0{index+1}</span>}</div>)}</div></section>)}
