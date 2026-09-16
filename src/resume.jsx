@@ -12,7 +12,7 @@ import thinkingTreeImage from './assets/resume/experience/thinking-tree.png'
 
 const highlights = [
   ['10년 9개월', '게임 기획 경력'],
-  ['15개', '참여 프로젝트 개수'],
+  ['15개·7개', '참여 프로젝트 개수·출시 프로젝트 개수'],
   ['370,000자', '단일 프로젝트 메인 퀘스트 텍스트 분량'],
   ['파트 리드', '설정·시나리오 검수 경험'],
 ]
